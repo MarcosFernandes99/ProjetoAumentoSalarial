@@ -1,7 +1,6 @@
 
 PerguntarDados();
 
-
 if(salario <= 1500){
     percentual = 20/100
     console.log(percentual)
@@ -21,6 +20,12 @@ else{
 
 CalcularAumento(salario, percentual);
 console.log(`Salário com aumento ${aumento}`)
+
+ExibirDados();
+
+function ExibirDados(){
+    console.log(`Nome: ${nome}, Salário: R$${salario}, Percentual de aumento: %${percentual * 100}, Salário ajustado: R$${aumento}`)
+}
 
 
 function CalcularAumento(num1, num2){
