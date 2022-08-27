@@ -1,40 +1,60 @@
-
+var continuar = true
+while(continuar){
 PerguntarDados();
 
-if(salario <= 1500){
-    percentual = 20/100
-    console.log(percentual)
-}
-else if(salario <= 2000){
-    percentual = 15/100
-    console.log(percentual)
-}
-else if(salario <= 3000){
-    percentual = 10/100
-    console.log(percentual)
-}
-else{
-    percentual = 5/100
-    console.log(percentual)
-}
+ConferirPercentual();
 
 CalcularAumento(salario, percentual);
-console.log(`Salário com aumento ${aumento}`)
+console.log(`Salário com aumento -  R$${aumento}`)
 
 ExibirDados();
 
-function ExibirDados(){
-    console.log(`Nome: ${nome}, Salário: R$${salario}, Percentual de aumento: %${percentual * 100}, Salário ajustado: R$${aumento}`)
+CalcularNovamente()
 }
 
+
+
+
+
+
+
+
+
+
+function PerguntarDados(){
+    nome = prompt(`Qual o seu nome`)
+    salario = parseFloat(prompt(`Qual o seu salário`)) 
+    console.log(`Nome - ${nome}`)   
+    console.log(`Salário - R$${salario}`)
+}
+
+function ConferirPercentual(){
+
+    if(salario <= 1500){
+        percentual = 20/100
+    }
+    else if(salario <= 2000){
+        percentual = 15/100
+    }
+    else if(salario <= 3000){
+        percentual = 10/100
+    }
+    else{
+        percentual = 5/100
+    }
+}
 
 function CalcularAumento(num1, num2){
     return aumento = num1 + (num1*num2) 
 }
 
-function PerguntarDados(){
-    nome = prompt(`Qual o seu nome`)
-    salario = parseFloat(prompt(`Qual o seu salário`)) 
-    console.log(nome)   
-    console.log(salario)
+function ExibirDados(){
+    console.log(`Nome: ${nome}, Salário: R$${salario}, Percentual de aumento: %${percentual * 100}, Salário ajustado: R$${aumento}`)
+}
+
+function CalcularNovamente(){
+    var opcao = prompt(`Deseja calcular novamente com novas informações? 1 - SIM/ 2 - NÃO`)
+    if(opcao != 1){
+        continuar = false
+}
 }
